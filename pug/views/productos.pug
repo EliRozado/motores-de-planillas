@@ -1,0 +1,26 @@
+html
+    head 
+        title="Lista de productos"
+        include include/head.pug
+
+    body
+        div(class='container-md p-3')
+            h1(class='text-center')='Lista de Productos'
+            if productos.length
+                table(class='table m-3 table-striped')
+                    thead
+                        tr 
+                            th(scope='col')='Nombre'
+                            th(scope='col')='Precio'
+                            th(scope='col')='Imagen'
+                    tbody
+                        each producto in productos
+                            tr
+                                td= producto.title 
+                                td= producto.price 
+                                td
+                                    img(src=producto.thumbnail class='img-thumbnail rounded' style='max-width:150px;')
+            else
+                p(class="lead")='No hay productos'
+            a(href='/productos/agregar' class='btn btn-outline-info' tabindex='-1' role='button' aria-disabled='true')='Agregar productos'
+        include include/footer.pug

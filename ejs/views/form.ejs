@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Agregar Producto</title>
+        <%- include('include/head'); %>
+    </head>
+    
+    <body>
+        <div class="container-md p-3">
+            <h1>Ingrese Producto</h1>
+            <form class="mb-3" action="/productos" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="price" name="price">
+                </div>
+                <div class="mb-3">
+                    <label for="thumbnail" class="form-label">Link de Imagen</label>
+                    <input type="text" class="form-control" id="thumbnail" name="thumbnail">
+                </div>
+                <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+            </form>
+            <a href="/productos" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Lista de productos</a>
+        </div>
+
+        <%- include('include/footer'); %>
+    </body>
+</html>
+

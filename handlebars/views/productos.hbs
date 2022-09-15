@@ -1,0 +1,27 @@
+<div class="container-md p-3">
+    <h1 class="text-center">Lista de Productos</h1>
+        
+    {{#if productos}}
+        <table class="table m-3 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each productos}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{price}}</td>
+                        <td><img src="{{thumbnail}}" class="img-thumbnail rounded" style="max-width:150px;"/></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p class="lead">No hay productos</p>
+    {{/if}}
+    <a href="/productos/agregar" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Agregar productos</a>
+</div>
